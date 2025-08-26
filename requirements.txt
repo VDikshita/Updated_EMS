@@ -1,0 +1,22 @@
+# Core EMS Requirements
+streamlit
+pandas
+
+# RAG & Embeddings
+langchain
+chromadb
+faiss-cpu 
+sentence-transformers
+langchain-community
+
+# LLM Inference via Groq
+groq
+
+# Fine-tuning & HuggingFace (future phase)
+datasets
+transformers
+peft
+bitsandbytes
+accelerate
+matplotlib
+xgboost

@@ -1,0 +1,2 @@
+{"input": "Product: Mozzarella\nWeek: 10\nHistory: 9500, 10000, 10500\nDeviation: +15%", "output": "Increase production by 20% and hold price steady due to seasonal surge."}
+{"input": "Product: Brie\nWeek: 9\nHistory: 650, 620, 600\nDeviation: -12%", "output": "Run a digital promotion and discount 10% to clear excess Brie stock before expiry."}
