@@ -156,7 +156,7 @@ warnings.filterwarnings("ignore", category=RuntimeWarning)
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 import planner, actor
-#from impact_estimator import parse_weekly_recommendations, estimate_weekly_impact
+from impact_estimator import parse_weekly_recommendations, estimate_weekly_impact
 
 # --- Streamlit Config ---
 st.set_page_config(page_title="CheeseCraft EMS", layout="wide")
