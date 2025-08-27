@@ -1,26 +1,31 @@
 ## with FASSI Vector Db
 
 import pandas as pd
-from langchain_community.embeddings import HuggingFaceEmbeddings
+#from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
+
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import DirectoryLoader
 # FAISS vector store (in-memory store, but can also be persisted)
-from langchain.vectorstores import FAISS
+#from langchain.vectorstores import FAISS
 from langchain.chains import RetrievalQAWithSourcesChain
 from langchain_core.language_models.llms import LLM
-from langchain.vectorstores import FAISS  # Using FAISS instead of Chroma
+#from langchain.vectorstores import FAISS  # Using FAISS instead of Chroma
+from langchain_community.vectorstores import FAISS
+
 from typing import Optional, List
 import groq
 import numpy as np
 import os
+
+os.environ["TRANSFORMERS_NO_TF"] = "1"
+
 
 # -----------------------------
 #  1. Load KB and Setup RAG
 # -----------------------------
 # KB_DIR = "D:/OneDrive - ANANTARA SOLUTIONS PRIVATE LIMITED/Desktop/EMS R&D/Cheese_Craft_EMS-COPY/kb"
 # loader = DirectoryLoader(KB_DIR, glob="**/*.md")
-
-import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 KB_DIR = os.path.join(BASE_DIR, "kb")
