@@ -1,0 +1,54 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pkl
+*.pickle
+*.log
+
+# --- Virtual environments ---
+env/
+venv/
+.venv/
+ENV/
+.conda/
+*.conda
+
+# --- IDE / Editors ---
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# --- OS-specific ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Build / Packaging ---
+build/
+dist/
+*.egg-info/
+.eggs/
+*.egg
+
+# --- Jupyter / Streamlit / Temp ---
+.ipynb_checkpoints/
+.streamlit/
+.cache/
+*.db
+
+# --- Data outputs (optional: keep raw data, ignore derived outputs) ---
+outputs/
+*.csv
+*.xlsx
+*.parquet
+*.json
+
+# --- Secrets (important) ---
+*.env
+.env.*
+credentials.json
+*.key
+*.pem
