@@ -63,7 +63,7 @@ class GroqLLM(LLM):
     model: str = "llama3-8b-8192"
     temperature: float = 0.0
     max_tokens: int = 1024
-    groq_api_key: str = "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"
+    groq_api_key: str = "****"
 
     def _call(self, prompt: str, stop: Optional[List[str]] = None) -> str:
         client = groq.Client(api_key=self.groq_api_key)
@@ -220,7 +220,7 @@ def smart_threshold(product, week):
 #  9. Simple Groq Prompt Runner
 # ---------------------------------
 def query_groq(prompt):
-    client = groq.Client(api_key="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")
+    client = groq.Client(api_key="*****")
     response = client.chat.completions.create(
         model="llama3-8b-8192",
         messages=[
