@@ -1,22 +1,22 @@
 # Core EMS Requirements
-streamlit
-pandas
+streamlit==1.45.0
+pandas==2.2.2
 
 # RAG & Embeddings
-langchain
-chromadb
-faiss-cpu 
-sentence-transformers
-langchain-community
+langchain==0.2.15
+chromadb==1.0.5
+faiss-cpu ==1.7.4
+sentence-transformers==4.1.0
+langchain-community==0.2.15
 
 # LLM Inference via Groq
-groq
+groq==0.31.0
 
 # Fine-tuning & HuggingFace (future phase)
-datasets
-transformers
-peft
-bitsandbytes
-accelerate
-matplotlib
-xgboost
+datasets==3.5.1
+transformers==4.51.3
+peft==0.15.2
+bitsandbytes==0.41.2
+accelerate==1.6.0
+matplotlib==3.7.5
+xgboost==2.0.3

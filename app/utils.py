@@ -1,26 +1,31 @@
 ## with FASSI Vector Db
 
 import pandas as pd
-from langchain_community.embeddings import HuggingFaceEmbeddings
+#from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
+
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import DirectoryLoader
 # FAISS vector store (in-memory store, but can also be persisted)
-from langchain.vectorstores import FAISS
+#from langchain.vectorstores import FAISS
 from langchain.chains import RetrievalQAWithSourcesChain
 from langchain_core.language_models.llms import LLM
-from langchain.vectorstores import FAISS  # Using FAISS instead of Chroma
+#from langchain.vectorstores import FAISS  # Using FAISS instead of Chroma
+from langchain_community.vectorstores import FAISS
+
 from typing import Optional, List
 import groq
 import numpy as np
 import os
+
+os.environ["TRANSFORMERS_NO_TF"] = "1"
+
 
 # -----------------------------
 #  1. Load KB and Setup RAG
 # -----------------------------
 # KB_DIR = "D:/OneDrive - ANANTARA SOLUTIONS PRIVATE LIMITED/Desktop/EMS R&D/Cheese_Craft_EMS-COPY/kb"
 # loader = DirectoryLoader(KB_DIR, glob="**/*.md")
-
-import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 KB_DIR = os.path.join(BASE_DIR, "kb")
@@ -58,7 +63,7 @@ class GroqLLM(LLM):
     model: str = "llama3-8b-8192"
     temperature: float = 0.0
     max_tokens: int = 1024
-    groq_api_key: str = "provide api key"
+    groq_api_key: str = "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"
 
     def _call(self, prompt: str, stop: Optional[List[str]] = None) -> str:
         client = groq.Client(api_key=self.groq_api_key)
@@ -215,7 +220,7 @@ def smart_threshold(product, week):
 #  9. Simple Groq Prompt Runner
 # ---------------------------------
 def query_groq(prompt):
-    client = groq.Client(api_key="provide api key")
+    client = groq.Client(api_key="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")
     response = client.chat.completions.create(
         model="llama3-8b-8192",
         messages=[
